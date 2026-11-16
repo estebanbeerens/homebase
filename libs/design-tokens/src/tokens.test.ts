@@ -1,6 +1,5 @@
 import { gluestackVars, hexToRgbTriplet, tokens } from './index';
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
 const tailwindTheme = require('../tailwind.cjs');
 
 describe('design tokens', () => {
@@ -16,8 +15,12 @@ describe('design tokens', () => {
 
   it('derives every Gluestack variable from a token', () => {
     expect(gluestackVars['--primary']).toBe('47 107 87');
-    expect(gluestackVars['--background']).toBe(hexToRgbTriplet(tokens.color.bg));
-    expect(Object.values(gluestackVars).every((v) => /^\d+ \d+ \d+$/.test(v))).toBe(true);
+    expect(gluestackVars['--background']).toBe(
+      hexToRgbTriplet(tokens.color.bg),
+    );
+    expect(
+      Object.values(gluestackVars).every((v) => /^\d+ \d+ \d+$/.test(v)),
+    ).toBe(true);
   });
 
   it('builds the Tailwind theme from tokens in px', () => {

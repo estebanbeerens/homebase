@@ -1,0 +1,22 @@
+{
+  "name": "@homebase/lint-tests",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "name": "lint-tests",
+    "tags": [
+      "type:tooling"
+    ],
+    "targets": {
+      "test": {
+        "dependsOn": []
+      }
+    },
+    "implicitDependencies": [
+      "ui-atoms",
+      "ui-molecules",
+      "feature-rooms",
+      "data-access"
+    ]
+  }
+}

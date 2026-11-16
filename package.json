@@ -12,6 +12,7 @@
     "@gluestack-ui/core": "^5.0.15",
     "@gluestack-ui/utils": "^5.0.6",
     "@legendapp/motion": "^2.5.3",
+    "@supabase/supabase-js": "^2.119.0",
     "dom-helpers": "^5.2.1",
     "expo": "~56.0.0",
     "expo-splash-screen": "~56.0.10",
@@ -74,6 +75,7 @@
   "workspaces": [
     "apps/*",
     "libs/*",
-    "libs/*/*"
+    "libs/*/*",
+    "tools/*"
   ]
 }
