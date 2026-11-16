@@ -71,3 +71,6 @@ test-output
 # Supabase CLI local state
 supabase/.branches
 supabase/.temp
+
+# TypeScript incremental build info
+*.tsbuildinfo
