@@ -3,10 +3,12 @@
 module.exports = {
   displayName: '@homebase/homebase-mobile',
   preset: 'jest-expo',
+  transformIgnorePatterns: require('../../tools/jest/transform-ignore.js'),
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   moduleNameMapper: {
     '[.]svg$': '@nx/expo/plugins/jest/svg-mock',
+    '[.]css$': '<rootDir>/../../tools/jest/style-mock.js',
   },
   transform: {
     '[.][jt]sx?$': [

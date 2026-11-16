@@ -3,6 +3,7 @@ const { withNxMetro } = require('@nx/expo');
 // `mergeConfig` must come from the Expo-provided Metro instance.
 const { getDefaultConfig } = require('expo/metro-config');
 const { mergeConfig } = require('@expo/metro/metro-config');
+const { withNativeWind } = require('nativewind/metro');
 
 const defaultConfig = getDefaultConfig(__dirname);
 const { assetExts, sourceExts } = defaultConfig.resolver;
@@ -24,7 +25,7 @@ const customConfig = {
   },
 };
 
-module.exports = withNxMetro(mergeConfig(defaultConfig, customConfig), {
+const nxConfig = withNxMetro(mergeConfig(defaultConfig, customConfig), {
   // Change this to true to see debugging info.
   // Useful if you have issues resolving modules
   debug: false,
@@ -32,4 +33,10 @@ module.exports = withNxMetro(mergeConfig(defaultConfig, customConfig), {
   extensions: [],
   // Specify folders to watch, in addition to Nx defaults (workspace libraries and node_modules)
   watchFolders: [],
+});
+
+module.exports = withNativeWind(nxConfig, {
+  input: './global.css',
+  configPath: '../../tailwind.config.js',
+  typescriptEnvPath: './src/nativewind-env.d.ts',
 });

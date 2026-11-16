@@ -1,0 +1,5 @@
+{
+  "app": {
+    "components": "libs/ui/atoms/src/gluestack"
+  }
+}

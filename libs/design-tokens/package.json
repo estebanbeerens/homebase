@@ -2,7 +2,6 @@
   "name": "@homebase/design-tokens",
   "version": "0.0.1",
   "private": true,
-  "type": "module",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
   "exports": {
@@ -11,7 +10,9 @@
       "import": "./src/index.ts",
       "default": "./src/index.ts"
     },
-    "./package.json": "./package.json"
+    "./package.json": "./package.json",
+    "./tailwind": "./tailwind.cjs",
+    "./tokens.json": "./src/tokens.json"
   },
   "nx": {
     "name": "design-tokens",

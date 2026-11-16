@@ -32,3 +32,21 @@ defineGlobal('URLSearchParams', globalThis.URLSearchParams);
 if (typeof global.structuredClone === 'undefined') {
   global.structuredClone = (object: unknown) => JSON.parse(JSON.stringify(object));
 }
+
+// react-aria (used by Gluestack) probes window.screen at import time, which
+// the React Native Jest environment does not provide.
+const testWindow = globalThis as { window?: { screen?: object } };
+if (testWindow.window && !testWindow.window.screen) {
+  testWindow.window.screen = {};
+}
+
+// NativeWind reads darkMode from the Tailwind config at Metro build time,
+// which Jest never runs. Homebase is light-only, so pin the scheme.
+jest.mock('nativewind', () => ({
+  ...jest.requireActual('nativewind'),
+  useColorScheme: () => ({
+    colorScheme: 'light',
+    setColorScheme: jest.fn(),
+    toggleColorScheme: jest.fn(),
+  }),
+}));

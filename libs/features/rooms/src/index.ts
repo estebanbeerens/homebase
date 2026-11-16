@@ -1,1 +1,2 @@
-export * from './lib/feature-rooms';
+// Public API. Export each component or module from here.
+export {};

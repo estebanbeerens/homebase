@@ -7,8 +7,8 @@
     "eas-build-post-install": "cd ../../ && node tools/scripts/eas-build-post-install.mjs . apps/homebase-mobile"
   },
   "dependencies": {
-    "@expo/vector-icons": "*",
     "@expo/metro": "*",
+    "@expo/vector-icons": "*",
     "@testing-library/react-native": "*",
     "expo": "*",
     "expo-splash-screen": "*",
@@ -17,9 +17,12 @@
     "jest-expo": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-reanimated": "*",
+    "react-native-safe-area-context": "*",
     "react-native-svg": "*",
     "react-native-svg-transformer": "*",
-    "react-native-web": "*"
+    "react-native-web": "*",
+    "react-native-worklets": "*"
   },
   "nx": {
     "tags": [

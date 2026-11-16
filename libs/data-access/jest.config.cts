@@ -3,6 +3,7 @@
 module.exports = {
   displayName: 'data-access',
   preset: 'jest-expo',
+  transformIgnorePatterns: require('../../tools/jest/transform-ignore.js'),
   moduleFileExtensions: ['ts', 'js', 'html', 'tsx', 'jsx'],
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   moduleNameMapper: {
