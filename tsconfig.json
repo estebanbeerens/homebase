@@ -1,0 +1,37 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/homebase-mobile"
+    },
+    {
+      "path": "./libs/design-tokens"
+    },
+    {
+      "path": "./libs/shared/types"
+    },
+    {
+      "path": "./libs/ui/atoms"
+    },
+    {
+      "path": "./libs/ui/molecules"
+    },
+    {
+      "path": "./libs/ui/organisms"
+    },
+    {
+      "path": "./libs/data-access"
+    },
+    {
+      "path": "./libs/features/inventory"
+    },
+    {
+      "path": "./libs/features/rooms"
+    },
+    {
+      "path": "./libs/features/dashboard"
+    }
+  ]
+}
