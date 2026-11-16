@@ -63,3 +63,11 @@ cache/
 
 
 test-output
+# Environment: real keys live only in local files
+.env
+.env*.local
+!.env.example
+
+# Supabase CLI local state
+supabase/.branches
+supabase/.temp

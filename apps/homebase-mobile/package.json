@@ -31,6 +31,22 @@
   "nx": {
     "tags": [
       "type:app"
-    ]
+    ],
+    "targets": {
+      "build": {
+        "command": "expo export --platform ios --platform android --output-dir dist --clear",
+        "options": {
+          "cwd": "apps/homebase-mobile"
+        },
+        "inputs": [
+          "default",
+          "^default",
+          "{workspaceRoot}/tailwind.config.js"
+        ],
+        "outputs": [
+          "{projectRoot}/dist"
+        ]
+      }
+    }
   }
 }

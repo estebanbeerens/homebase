@@ -4,6 +4,15 @@
   "include": ["./src/nativewind-env.d.ts"],
   "references": [
     {
+      "path": "../../libs/ui/organisms"
+    },
+    {
+      "path": "../../libs/ui/molecules"
+    },
+    {
+      "path": "../../libs/ui/atoms"
+    },
+    {
       "path": "./tsconfig.app.json"
     },
     {
