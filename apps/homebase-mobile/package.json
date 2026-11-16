@@ -9,6 +9,9 @@
   "dependencies": {
     "@expo/metro": "*",
     "@expo/vector-icons": "*",
+    "@react-native-async-storage/async-storage": "*",
+    "@react-native-community/datetimepicker": "*",
+    "@react-native-community/slider": "*",
     "@testing-library/react-native": "*",
     "expo": "*",
     "expo-splash-screen": "*",
@@ -17,6 +20,7 @@
     "jest-expo": "*",
     "react": "*",
     "react-native": "*",
+    "react-native-gesture-handler": "*",
     "react-native-reanimated": "*",
     "react-native-safe-area-context": "*",
     "react-native-svg": "*",

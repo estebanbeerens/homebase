@@ -27,7 +27,8 @@
     "src/**/*.test.ts",
     "eslint.config.js",
     "eslint.config.cjs",
-    "eslint.config.mjs"
+    "eslint.config.mjs",
+    ".rnstorybook"
   ],
   "include": [
     "**/*.ts",
@@ -38,6 +39,12 @@
     "expo-env.d.ts"
   ],
   "references": [
+    {
+      "path": "../../libs/ui/organisms/tsconfig.lib.json"
+    },
+    {
+      "path": "../../libs/ui/molecules/tsconfig.lib.json"
+    },
     {
       "path": "../../libs/ui/atoms/tsconfig.lib.json"
     }

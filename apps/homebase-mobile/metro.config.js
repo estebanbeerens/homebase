@@ -1,9 +1,13 @@
+const path = require('path');
 const { withNxMetro } = require('@nx/expo');
 // Expo SDK 55+ ships Metro via `@expo/metro`. `getDefaultConfig` and
 // `mergeConfig` must come from the Expo-provided Metro instance.
 const { getDefaultConfig } = require('expo/metro-config');
 const { mergeConfig } = require('@expo/metro/metro-config');
 const { withNativeWind } = require('nativewind/metro');
+const {
+  withStorybook,
+} = require('@storybook/react-native/metro/withStorybook');
 
 const defaultConfig = getDefaultConfig(__dirname);
 const { assetExts, sourceExts } = defaultConfig.resolver;
@@ -35,8 +39,14 @@ const nxConfig = withNxMetro(mergeConfig(defaultConfig, customConfig), {
   watchFolders: [],
 });
 
-module.exports = withNativeWind(nxConfig, {
+const nativeWindConfig = withNativeWind(nxConfig, {
   input: './global.css',
   configPath: '../../tailwind.config.js',
   typescriptEnvPath: './src/nativewind-env.d.ts',
+});
+
+// On-device Storybook. Removed from the bundle unless `npm run storybook`.
+module.exports = withStorybook(nativeWindConfig, {
+  enabled: process.env.EXPO_PUBLIC_STORYBOOK_ENABLED === 'true',
+  configPath: path.resolve(__dirname, './.rnstorybook'),
 });

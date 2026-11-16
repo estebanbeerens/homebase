@@ -30,7 +30,8 @@ defineGlobal('URL', globalThis.URL);
 defineGlobal('URLSearchParams', globalThis.URLSearchParams);
 
 if (typeof global.structuredClone === 'undefined') {
-  global.structuredClone = (object: unknown) => JSON.parse(JSON.stringify(object));
+  global.structuredClone = (object: unknown) =>
+    JSON.parse(JSON.stringify(object));
 }
 
 // react-aria (used by Gluestack) probes window.screen at import time, which
